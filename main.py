@@ -7,7 +7,12 @@ def main(methods, params):
     params_list = ast.literal_eval(params)
 
     for i in range(len(methods_list)):
-        print(f'{methods_list[i]}({params_list[i]});')
+        if len(params_list[i]) > 0 :
+            args = ','.join(map(str, params_list[i]))
+        else:
+            args = ''
+
+        print(f'{methods_list[i]}({args});')
 
 
 if __name__ == '__main__':
